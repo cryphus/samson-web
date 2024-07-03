@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;500;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{% static 'images/logo.svg' %}" alt="SAMSON Logo" class="logo">
+    </div>
+    <div class="container">
+        <div class="left-section">
+            <h1>Ремонт под ключ</h1>
+            <p>Посмотри, как может выглядеть твоя квартира после ремонта</p>
+            <p>Нейросеть <span class="highlight"><img src="{% static 'images/logo.svg' %}" alt="SAMSON Logo" class="inline-logo"></span> сгенерирует варианты дизайна для вашей квартиры, а также рассчитает стоимость всех работ для подрядчиков.</p>
+            <div class="cta">
+                <div class="cta-wrapper">
+                    <button class="cta-button" onclick="chooseZhKClicked()"></button>
+                    <span class="cta-text">
+                        Выбери свой ЖК
+                        <img src="{% static 'images/change-icon.svg' %}" alt="Change Icon" class="change-icon">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="header">
+                <a href="#" onclick="howItWorksClicked()">как это работает?</a>
+                <a href="#" onclick="ourWorksClicked()">наши работы</a>
+                <a href="#" onclick="contactsClicked()">контакты</a>
+                <a href="#" class="login-button" onclick="loginClicked()">
+                    <img src="{% static 'images/login-icon.svg' %}" alt="Login Icon" class="login-icon">
+                    вход
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="new-container">
+        <div class="card">
+            <img src="{% static 'images/img-faq1.png' %}" alt="Floor Plan">
+            <h2>Авто замер AI</h2>
+            <ol class="numbered-list">
+                <li><span>Загрузи фото с сайта застройщика</span></li>
+                <li><span>Перепроверь размеры от AI</span></li>
+                <li><span>Свайпай планировки</span></li>
+                <li><span>Ответь на несколько вопросов о этапе ремонта</span></li>
+            </ol>
+            <p>Забирай информацию о площади стен, и стройматериалах</p>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/img-faq2.png' %}" alt="Living Room">
+            <h2>Дизайн за 30 секунд</h2>
+            <ol class="numbered-list">
+                <li><span>Опиши квартиру мечты</span></li>
+                <li><span>Выбери ценовую категорию</span></li>
+                <li><span>Свайпай визуализацию 3D под ключ</span></li>
+            </ol>
+            <p>Все сгенерированные изображения учитывают:</p>
+            <p>геометрию помещения</p>
+            <p>наличие товаров в вашем городе</p>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/img-faq2.png' %}" alt="Living Room">
+            <h2>Стоимость всех работ</h2>
+            <ol class="numbered-list">
+                <li><span>Получи список работ</span></li>
+                <li><span>Выбирай подрядчиков по портфолио</span></li>
+                <li><span>Следи за ценой всего ремонта онлайн</span></li>
+            </ol>
+            <p>Готовый план действий</п>
+            <п>Общая смета</п>
+            <п>Сроки</п>
+        </div>
+    </div>
+    <script>
+        function chooseZhKClicked() {
+            console.log('Вы нажали на "Выбери свой ЖК"');
+        }
+
+        function howItWorksClicked() {
+            console.log('Вы нажали на "как это работает?"');
+        }
+
+        function ourWorksClicked() {
+            console.log('Вы нажали на "наши работы"');
+        }
+
+        function contactsClicked() {
+            console.log('Вы нажали на "контакты"');
+        }
+
+        function loginClicked() {
+            console.log('Вы нажали на "Вход"');
+        }
+    </script>
+</body>
+</html>
