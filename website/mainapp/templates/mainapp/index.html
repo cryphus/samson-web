@@ -19,11 +19,11 @@
             <p>Нейросеть <span class="highlight"><img src="{% static 'images/logo.svg' %}" alt="SAMSON Logo" class="inline-logo"></span> сгенерирует варианты дизайна для вашей квартиры, а также рассчитает стоимость всех работ для подрядчиков.</p>
             <div class="cta">
                 <div class="cta-wrapper">
-                    <button class="cta-button" onclick="chooseZhKClicked()"></button>
-                    <span class="cta-text">
-                        Выбери свой ЖК
-                        <img src="{% static 'images/change-icon.svg' %}" alt="Change Icon" class="change-icon">
-                    </span>
+                    <button class="custom-button" onclick="chooseZhKClicked()">
+                        <span class="circle"></span>
+                        <span class="text">Выбери свой ЖК</span>
+                        <span class="arrow"><img src="{% static 'images/change-icon.svg' %}" alt="SAMSON Logo" class="inline-logo"></span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -41,7 +41,9 @@
     </div>
     <div class="new-container">
         <div class="card">
-            <img src="{% static 'images/img-faq1.png' %}" alt="Floor Plan">
+            <div class="image-container">
+                <img src="{% static 'images/img-faq1.png' %}" alt="Floor Plan">
+            </div>
             <h2>Авто замер AI</h2>
             <ol class="numbered-list">
                 <li><span>Загрузи фото с сайта застройщика</span></li>
@@ -52,7 +54,9 @@
             <p>Забирай информацию о площади стен, и стройматериалах</p>
         </div>
         <div class="card">
-            <img src="{% static 'images/img-faq2.png' %}" alt="Living Room">
+            <div class="image-container">
+                <img src="{% static 'images/img-faq2.png' %}" alt="Living Room">
+            </div>
             <h2>Дизайн за 30 секунд</h2>
             <ol class="numbered-list">
                 <li><span>Опиши квартиру мечты</span></li>
@@ -64,37 +68,91 @@
             <p>наличие товаров в вашем городе</p>
         </div>
         <div class="card">
-            <img src="{% static 'images/img-faq2.png' %}" alt="Living Room">
+            <div class="image-container">
+                <img src="{% static 'images/img-faq2.png' %}" alt="Living Room">
+            </div>
             <h2>Стоимость всех работ</h2>
             <ol class="numbered-list">
                 <li><span>Получи список работ</span></li>
                 <li><span>Выбирай подрядчиков по портфолио</span></li>
                 <li><span>Следи за ценой всего ремонта онлайн</span></li>
             </ol>
-            <p>Готовый план действий</п>
-            <п>Общая смета</п>
-            <п>Сроки</п>
+            <p>Готовый план действий</p>
+            <p>Общая смета</p>
+            <p>Сроки</p>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="{% static 'images/logo.svg' %}" alt="SAMSON Logo" class="footer-logo-img">
+            </div>
+            <div class="footer-links">
+                <a href="#" onclick="aboutUsClicked()">О нас</a>
+                <a href="#" onclick="servicesClicked()">Услуги</a>
+                <a href="#" onclick="privacyPolicyClicked()">Политика конфиденциальности</a>
+                <a href="#" onclick="termsOfServiceClicked()">Условия обслуживания</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="{% static 'images/vk-icon.svg' %}" alt="VK" class="social-icon"></a>
+                <a href="#"><img src="{% static 'images/tg-icon.svg' %}" alt="Telegram" class="social-icon"></a>
+                <a href="#"><img src="{% static 'images/inst-icon.svg' %}" alt="Instagram" class="social-icon"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="popup-modal">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <div class="popup-body">
+                <div class="popup-div">Content 1</div>
+                <div class="popup-div">Content 2</div>
+                <div class="popup-div">Content 3</div>
+            </div>
+        </div>
+    </div>
+
     <script>
         function chooseZhKClicked() {
-            console.log('Вы нажали на "Выбери свой ЖК"');
+            document.getElementById('popup-modal').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-modal').style.display = 'none';
+        }
+
+        function aboutUsClicked() {
+            console.log('Вы нажали на "О нас"');
+        }
+
+        function servicesClicked() {
+            console.log('Вы нажали на "Услуги"');
+        }
+
+        function privacyPolicyClicked() {
+            console.log('Вы нажали на "Политика конфиденциальности"');
+        }
+
+        function termsOfServiceClicked() {
+            console.log('Вы нажали на "Условия обслуживания"');
         }
 
         function howItWorksClicked() {
-            console.log('Вы нажали на "как это работает?"');
+            console.log('howItWorksClicked');
         }
 
         function ourWorksClicked() {
-            console.log('Вы нажали на "наши работы"');
+            console.log('ourWorksClicked');
         }
 
         function contactsClicked() {
-            console.log('Вы нажали на "контакты"');
+            console.log('contactsClicked');
         }
 
         function loginClicked() {
-            console.log('Вы нажали на "Вход"');
+            console.log('loginClicked');
         }
     </script>
 </body>
